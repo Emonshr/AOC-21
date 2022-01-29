@@ -1,8 +1,9 @@
 $arr_from_input = []
 
 File.open(ARGV[0]).each do |number_from_input|
+    number_from_input = number_from_input.strip
+    puts " file reading #{number_from_input}"
     number_from_input = number_from_input.to_i
-    # puts number_from_input
     $arr_from_input.push(number_from_input)
 end
 
@@ -15,8 +16,7 @@ def arr_looper (arr_from_input)
     decreased_or_equal = 0
     arr_from_input.each do |top_number|
         #Always feed the initial value during dry-run or else, the counter+2-TH
-    bottom_number = arr_from_input[counter]
-        
+        bottom_number = arr_from_input[counter]
 
             if  bottom_number > top_number
                 increased += 1
@@ -35,7 +35,7 @@ def arr_looper (arr_from_input)
                 # next
             end
             
-        counter += 1
+        counter += 1 if counter < arr_from_input.length-1
         end
         return increased
     end
