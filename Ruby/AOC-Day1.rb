@@ -15,7 +15,7 @@ def arr_looper (arr_from_input)
     bottom_number = 0
     decreased_or_equal = 0
     arr_from_input.each do |top_number|
-        #Always feed the initial value during dry-run or else, the counter+2-TH
+        #Always feed the initial value of counter=1 during dry-run or else, the (counter+1)TH
         bottom_number = arr_from_input[counter]
 
             if  bottom_number > top_number
