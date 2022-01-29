@@ -1,43 +1,43 @@
-$arr = $arr_clone = []
+$arr_from_input = []
 
-File.open(ARGV[0]).each do |number_from_line|
-    number_from_line = number_from_line.to_i
-    $arr_clone.push(number_from_line)
-    $arr.push(number_from_line)    
+File.open(ARGV[0]).each do |number_from_input|
+    number_from_input = number_from_input.to_i
+    # puts number_from_input
+    $arr_from_input.push(number_from_input)
 end
 
 
-def arr_looper (arr_clone)
+
+def arr_looper (arr_from_input)
     increased = 0
-    counter = 0
-    number = 0
+    counter = 1
+    bottom_number = 0
     decreased_or_equal = 0
-    arr_clone.each do |number_from_arr_clone|
+    arr_from_input.each do |top_number|
         #Always feed the initial value during dry-run or else, the counter+2-TH
-        counter == 0 ? number = arr_clone[1]
-            : number = arr_clone[counter]
+    bottom_number = arr_from_input[counter]
         
 
-            if  number_from_arr_clone > number
+            if  bottom_number > top_number
                 increased += 1
-                puts number
-                puts number_from_arr_clone
+                puts top_number
+                puts bottom_number
                 puts "-----time increased---------------"
                 puts increased
                 puts "----------------------------------"
-            elsif number <= number_from_arr_clone
+            elsif bottom_number <= top_number
                 decreased_or_equal += 1
-                puts number
-                puts number_from_arr_clone
+                puts top_number
+                puts bottom_number
                 puts "-----time decreased or equal------"
                 puts decreased_or_equal
                 puts "----------------------------------"
-                next
+                # next
             end
             
-            counter += 2
+        counter += 1
         end
         return increased
     end
 
-puts "total increased: #{arr_looper($arr_clone)}"
+puts "total increased: #{arr_looper($arr_from_input)}"
