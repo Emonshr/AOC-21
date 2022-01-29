@@ -1,4 +1,3 @@
-$counter ||= 0
 $arr = $arr_clone = []
 
 File.open(ARGV[0]).each do |number_from_line|
