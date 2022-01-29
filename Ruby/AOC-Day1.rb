@@ -17,8 +17,7 @@ def arr_looper (arr_clone)
         counter == 0 ? number = arr_clone[1]
             : number = arr_clone[counter]
         
-            # mark the index where it is found, from the next time we will resume from that
-            # specific index, so that infinite loop can be avoided
+
             if  number_from_arr_clone > number
                 increased += 1
                 puts number
@@ -41,5 +40,4 @@ def arr_looper (arr_clone)
         return increased
     end
 
-store_number = $arr[0]
 puts "total increased: #{arr_looper($arr_clone)}"
